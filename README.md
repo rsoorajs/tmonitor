@@ -35,8 +35,6 @@ To clear the list of monitored people you can use `.monitor_clear` or `m_clear`.
 
 The monitor list can be found in the `monitor.list` file which will be automatically created once you add someone to the list
 
-*Note:* commands will not work in a monitored chat, so please use your private chat or any other to send commands once you've start monitoring someone.
-
 
 
 Now that you know how to add people to the monitor list let's see how you forward stuff.

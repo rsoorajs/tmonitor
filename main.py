@@ -92,11 +92,6 @@ forward_list = load_list("fwd")
 
 try:
 
-    @app.on_message(Filters.create(lambda _, x: x.chat.username in monitor_list or x.chat.id in monitor_list)) # Using Filters.create instead of Filters.chat so I can update the list dynamically
-    def fwd(client, message):
-        for chat in forward_list:
-            message.forward(f"@{chat}")
-
     @app.on_message(Filters.me & Filters.command(["monitor", "m"], settings["command_prefix"]))
     def monitoradd(client, message):
         global monitor_list
@@ -167,6 +162,10 @@ try:
         monitor_list = []
         save_list("m")
 
+    @app.on_message(Filters.create(lambda _, x: x.from_user.username in monitor_list or x.from_user.id in monitor_list)) # Using Filters.create instead of Filters.chat so I can update the list dynamically
+    def fwd(client, message):
+        for chat in forward_list:
+            message.forward(f"@{chat}")
 
 except Exception as e:
     print("\n<<----------------BEGIN-ERROR----------------\n", e, "\n------------------END-ERROR---------------->>\n")
