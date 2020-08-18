@@ -1,5 +1,5 @@
 # tmonitor [![License](https://img.shields.io/badge/License-AGPLv3-green)](https://img.shields.io/badge/License-AGPLv3-green) 
-A telegram userbot made with Pyrogram to monitor messages from someone and forward them automatically to someone else
+A telegram userbot made with Pyrogram to monitor messages from someone and forward them automatically to someone else.
 
 ## Installation
 
