@@ -165,6 +165,16 @@ try:
                     save_list("mc")
                     message.reply("Ok")
 
+            elif name[0] == "-" and name[1:].isdigit():
+                name = int(name)
+                if name in mc_list:
+                    message.reply("No duplicates")
+                else:
+                    mc_list.append(name)
+                    save_list("mc")
+                    message.reply("Ok")
+
+
             elif name[0].isdigit() and name[1:].isdigit() == False:
                 message.reply("Invalid name")
 
